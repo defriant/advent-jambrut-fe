@@ -1,17 +1,20 @@
 import { lazy } from 'react'
-import { Route, Routes } from 'react-router-dom'
 import ROUTE from './route'
 import ErrorPage from '../pages/ErrorPage'
+import LayoutMain from '../layouts/MainLayout'
+import { Route, Routes } from 'react-router-dom'
 
 const Home = lazy(() => import('../pages/Home/Home'))
 
 function Router() {
     return (
         <Routes>
-            <Route
-                path={ROUTE.home}
-                element={<Home />}
-            />
+            <Route element={<LayoutMain />}>
+                <Route
+                    path={ROUTE.home}
+                    element={<Home />}
+                />
+            </Route>
 
             <Route
                 path='/*'
