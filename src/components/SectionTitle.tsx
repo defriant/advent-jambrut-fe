@@ -23,7 +23,7 @@ function SectionTitle(props: SectionTitleProps) {
                 borderBottomColor='primary'
             >
                 <Heading 
-                    fontSize='55px' 
+                    fontSize={{ base: '23px', sm: '28px' }} 
                     textAlign='center' 
                     fontWeight='700'
                 >{title}</Heading>

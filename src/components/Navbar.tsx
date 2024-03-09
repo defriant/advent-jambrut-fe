@@ -17,6 +17,7 @@ import {
     useDisclosure,
     Icon,
 } from '@chakra-ui/react'
+import { LOGO } from '../assets'
 
 type NavbarProps = {
     isOnTop: boolean
@@ -69,12 +70,11 @@ function Navbar(props: NavbarProps) {
                         fontSize='20px'
                         color={isOnTop ? 'white' : 'black'}
                     >
-                        LOGO
-                        {/* <Image
-                            src={isOnTop ? sei_logo_white : sei_logo}
+                        <Image
+                            src={isOnTop ? LOGO : LOGO}
                             height={isOnTop ? '60px' : '50px'}
                             transition='.3s'
-                        /> */}
+                        />
                     </Link>
                     {isLargerThan768 ? (
                         <Flex
@@ -97,7 +97,9 @@ function Navbar(props: NavbarProps) {
                                         transition='.3s'
                                         borderBottomWidth={isActive ? '3px' : 'none'}
                                         borderBottomColor={isOnTop
-                                            ?   'white'
+                                            ?   isActive
+                                                ?   'primary'
+                                                :   'black'
                                             :   isActive
                                                 ?   'primary'
                                                 :   'black'
@@ -105,13 +107,17 @@ function Navbar(props: NavbarProps) {
                                         fontWeight={isActive ? 'semibold' : 'normal'}
                                         _hover={{}}
                                         color={isOnTop
-                                            ?   'white'
+                                            ?   location?.pathname === ROUTE?.home
+                                                ?   'white'
+                                                :   isActive
+                                                    ?   'primary'
+                                                    :   'black'
                                             :   isActive
                                                 ?   'primary'
                                                 :   'black'
                                         }
                                         fontFamily='Lato'
-                                        fontSize='20px'
+                                        fontSize='15px'
                                     >
                                         {link?.label}
                                     </Link>
@@ -126,7 +132,12 @@ function Navbar(props: NavbarProps) {
                                 as={CgMenuRight}
                                 transition='.3s'
                                 fontSize={isOnTop ? '36px' : '24px'}
-                                color={isOnTop ? 'white' : 'black'}
+                                color={isOnTop 
+                                    ?   location?.pathname === ROUTE?.home
+                                        ?   'white'
+                                        :   'black'
+                                    :   'black'
+                                }
                             />
                             <Drawer
                                 isOpen={isOpen}
@@ -165,6 +176,7 @@ function Navbar(props: NavbarProps) {
                                                         width='max-content'
                                                         color={isActive ? 'primary' : 'black'}
                                                         onClick={onClose}
+                                                        fontSize='15px'
                                                     >
                                                         {link?.label}
                                                     </Link>

@@ -23,7 +23,6 @@ function LayoutMain() {
 
     return (
         <Box
-            minHeight='200vh'
             transition='0.3s'
             width='100%'
             overflow='hidden'

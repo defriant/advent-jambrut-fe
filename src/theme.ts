@@ -22,7 +22,7 @@ export default extendTheme({
         'scrollbar-width': '.5rem',
     },
     colors: {
-        primary: '#0BC5EA',
+        primary: '#0481c5',
     },
     shadows: {
         border: 'rgba(0, 0, 0, 0.12) 0px 1px 6px 0px',

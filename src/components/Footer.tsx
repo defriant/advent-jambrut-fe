@@ -1,16 +1,15 @@
 import React from 'react'
 import SectionContainer from './SectionContainer'
 import { Link as ReactRouterLink } from 'react-router-dom'
-import { 
-    FaInstagram, 
-    FaWhatsapp, 
-    FaFacebook, 
+import {
+    FaInstagram,
+    FaWhatsapp,
+    FaFacebook,
     FaYoutube,
-    FaStethoscope, 
+    FaStethoscope,
 } from 'react-icons/fa'
 import {
     Box,
-    Center,
     Divider,
     Flex,
     Heading,
@@ -20,139 +19,117 @@ import {
     Stack,
     Text,
 } from '@chakra-ui/react'
+import { LOGO_FOOTER } from '../assets'
+import { format } from 'date-fns'
 
 function Footer() {
     const USEFUL_LINKS = [
-        { name: 'About Us', href: '/' },
-        { name: 'Contact Us', href: '/' },
-        { name: 'Customer Service', href: '/' },
-        { name: 'Our Location', href: '/' },
+        { name: 'Gallery', href: '/gallery' },
+        { name: 'News', href: '/news' },
+        { name: 'Articles', href: '/articles' },
     ]
 
     const SOCIAL_MEDIAS = [
         { icon: FaInstagram },
         { icon: FaWhatsapp },
         { icon: FaFacebook },
-        { icon: FaYoutube },
     ]
 
     return (
-        <Stack spacing='0px'>
-            <Box
-                height='2rem'
-                backgroundColor='white'
-            />
-            <Center
-                paddingY='3rem'
-                backgroundColor='rgba(0, 0, 0, 0.5)'
-                backdropFilter='blur(8px)'
-            >
-                <Image
-                    // src={sei_logo_font_white}
-                    height='6rem'
-                />
-            </Center>
-            <Box backgroundColor='#003a5a'>
-                <SectionContainer>
+        <Box backgroundColor='#003a5a'>
+            <SectionContainer>
+                <Flex
+                    direction={{ base: 'column', md: 'row' }}
+                    paddingY='6rem'
+                    gap='6rem'
+                >
                     <Flex
-                        direction={{ base: 'column', md: 'row' }}
-                        paddingY='6rem'
-                        gap='6rem'
+                        direction='column'
+                        width='100%'
+                        gap='1rem'
+                        alignItems={{ base: 'unset', sm: 'flex-start' }}
                     >
-                        <Flex
-                            direction='column'
-                            width='100%'
-                            gap='1rem'
-                        >
-                            <Flex alignItems='center' gap='8px' marginBottom='1rem'>
-                                <Icon 
-                                    as={FaStethoscope} 
-                                    fontSize='24px'
-                                    color='white'
-                                />
-                                <Heading fontSize='24px' color='white'>Sp.KK Seminar</Heading>
-                            </Flex>
-                            <Text
-                                fontSize='normal'
-                                fontWeight='400'
-                                color='white'
-                            >
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aeneansollicitudin, lorem quis bibn set erim nosos.
-                            </Text>
-                            <Text
-                                fontSize='normal'
-                                fontWeight='400'
-                                color='white'
-                            >
-                                +62812345678
-                            </Text>
-                            <Text
-                                fontSize='normal'
-                                fontWeight='400'
-                                color='white'
-                            >
-                                Jl. Abcde, Blok AB 10, Jakarta Raya
-                            </Text>
+                        <Flex alignItems='center' gap='8px' marginBottom='1rem'>
+                            <Image
+                                src={LOGO_FOOTER}
+                                width='48px'
+                                height='48px'
+                            />
+                            <Heading fontSize='20px' color='white'>GMAHK Advent Jambrut</Heading>
                         </Flex>
-                        <Flex
-                            direction='column'
-                            width='100%'
-                            gap='1rem'
+                        <Text
+                            fontSize='14px'
+                            fontWeight='400'
+                            color='white'
                         >
-                            <Heading fontSize='24px' color='white' marginBottom='1rem'>Useful Links</Heading>
-                            {USEFUL_LINKS?.map((link: any, index: number) => {
+                            Jalan Jambrut 13, Kecamatan Senen, Jakarta Pusat 10330
+                        </Text>
+                    </Flex>
+                    <Flex
+                        direction='column'
+                        width='100%'
+                        gap='1rem'
+                        alignItems={{ base: 'unset', sm: 'center' }}
+                    >
+                        <Flex height='48px' alignItems='center' marginBottom='1rem'> 
+                            <Heading fontSize='20px' color='white'>Useful Links</Heading>
+                        </Flex>
+                        {USEFUL_LINKS?.map((link: any, index: number) => {
+                            return (
+                                <Link
+                                    key={index}
+                                    as={ReactRouterLink}
+                                    to={link?.href}
+                                    color='white'
+                                    fontWeight='semibold'
+                                    fontSize='14px'
+                                >
+                                    {link?.name}
+                                </Link>
+                            )
+                        })}
+                    </Flex>
+                    <Flex
+                        width='100%'
+                        gap='1rem'
+                        direction='column'
+                        alignItems={{ base: 'unset', sm: 'center' }}
+                    >
+                        <Flex height='48px' alignItems='center' marginBottom='1rem'> 
+                            <Heading fontSize='20px' color='white'>Sosial Media</Heading>
+                        </Flex>
+                        <Flex alignItems='center' gap='.5rem'>
+                            {SOCIAL_MEDIAS?.map((socialMedia: any, index: number) => {
                                 return (
-                                    <Link 
-                                        key={index} 
-                                        as={ReactRouterLink}
-                                        to={link?.href}
+                                    <Icon
+                                        key={index}
+                                        as={socialMedia?.icon}
+                                        fontSize='20px'
                                         color='white'
-                                        fontWeight='semibold'
-                                    >
-                                        {link?.name}
-                                    </Link>
+                                        cursor='pointer'
+                                    />
                                 )
                             })}
                         </Flex>
-                        <Flex
-                            width='100%'
-                            gap='1rem'
-                            direction='column'
-                        >
-                            <Heading fontSize='24px' color='white' marginBottom='1rem'>Sosial Media</Heading>
-                            <Flex alignItems='center' gap='.5rem'>
-                                {SOCIAL_MEDIAS?.map((socialMedia: any, index: number) => {
-                                    return (
-                                        <Icon 
-                                            key={index} 
-                                            as={socialMedia?.icon} 
-                                            fontSize='24px'
-                                            color='white'
-                                            cursor='pointer'
-                                        />
-                                    )
-                                })}
-                            </Flex>
-                        </Flex>
                     </Flex>
-                    <Stack
-                        spacing='1.5rem'
-                        paddingBottom='1.5rem'
-                    >
-                        <Divider />
-                        <Stack spacing='0rem'>
-                            <Text
-                                textAlign='center'
-                                fontSize='xs'
-                                color='white'
-                            >
-                                &copy; 2024 Advent Jambrut, All Rights Reserved
-                            </Text>
-                        </Stack>
+                </Flex>
+                <Stack
+                    spacing='1.5rem'
+                    paddingBottom='1.5rem'
+                >
+                    <Divider />
+                    <Stack spacing='0rem'>
+                        <Text
+                            textAlign='center'
+                            fontSize='xs'
+                            color='white'
+                        >
+                            &copy; {format(new Date(), 'yyyy')} Advent Jambrut, All Rights Reserved
+                        </Text>
                     </Stack>
-                </SectionContainer>
-            </Box>
-        </Stack>
+                </Stack>
+            </SectionContainer>
+        </Box>
     )
 }
 
