@@ -5,8 +5,6 @@ import {
     FaInstagram,
     FaWhatsapp,
     FaFacebook,
-    FaYoutube,
-    FaStethoscope,
 } from 'react-icons/fa'
 import {
     Box,

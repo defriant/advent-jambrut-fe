@@ -14,7 +14,7 @@ type ArticleItemProps = {
 }
 
 function ArticleItem(props: ArticleItemProps) {
-    const { image, title, type, source, slug, id, description } = props
+    const { image, title, type, source, id, description } = props
 
     return (
         <Stack
