@@ -5,6 +5,7 @@ import App from './App'
 import RouteProvider from './routes/RouteProvider'
 import { ChakraProvider } from '@chakra-ui/react'
 import theme from './theme'
+import './index.css'
 
 console.log(theme)
 

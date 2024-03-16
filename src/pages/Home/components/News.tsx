@@ -73,6 +73,12 @@ const News: React.FC = () => {
                             fontSize={{ base: '14px', sm: '16px' }}
                             size={{ base: 'sm', sm: 'unset' }}
                             marginX='auto'
+                            backgroundColor='primary'
+                            color='white'
+                            _hover={{
+                                color: 'black',
+                                backgroundColor: 'silver',
+                            }}
                         >
                             See More
                         </Button>

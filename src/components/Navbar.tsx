@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import ROUTE from '../routes/route' 
 import { CgMenuRight } from 'react-icons/cg'
+import { LOGO } from '../assets'
 import { Link as ReactRouterLink, useLocation } from 'react-router-dom'
 import {
     Box,
@@ -17,7 +18,6 @@ import {
     useDisclosure,
     Icon,
 } from '@chakra-ui/react'
-import { LOGO } from '../assets'
 
 type NavbarProps = {
     isOnTop: boolean
@@ -66,7 +66,6 @@ function Navbar(props: NavbarProps) {
                     <Link
                         as={ReactRouterLink}
                         to={ROUTE?.home}
-                        fontFamily='Lato'
                         fontSize='20px'
                         color={isOnTop ? 'white' : 'black'}
                     >
@@ -116,7 +115,6 @@ function Navbar(props: NavbarProps) {
                                                 ?   'primary'
                                                 :   'black'
                                         }
-                                        fontFamily='Lato'
                                         fontSize='15px'
                                     >
                                         {link?.label}

@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'advent-sans';
+    src: url('./assets/fonts/AdventSans-Logo.otf') format('opentype');
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'advent-sans';
+}

@@ -6,9 +6,9 @@ export default extendTheme({
         useSystemColorMode: false,
     },
     fonts: {
-        heading: '"Merriweather", serif',
-        body: '"Merriweather", serif',
-        mono: '"Merriweather", serif',
+        heading: '"advent-sans", serif',
+        body: '"advent-sans", serif',
+        mono: '"advent-sans", serif',
     },
     breakpoints: {
         xs: '414px',

@@ -1,13 +1,7 @@
 import React from 'react'
 import SectionContainer from './SectionContainer'
 import { Link as ReactRouterLink } from 'react-router-dom'
-import {
-    FaInstagram,
-    FaWhatsapp,
-    FaFacebook,
-    FaYoutube,
-    FaStethoscope,
-} from 'react-icons/fa'
+import { FaMap, FaYoutube } from 'react-icons/fa'
 import {
     Box,
     Divider,
@@ -30,9 +24,7 @@ function Footer() {
     ]
 
     const SOCIAL_MEDIAS = [
-        { icon: FaInstagram },
-        { icon: FaWhatsapp },
-        { icon: FaFacebook },
+        { icon: FaYoutube, href: 'https://www.youtube.com/@adventjambrut6654' },
     ]
 
     return (
@@ -55,14 +47,25 @@ function Footer() {
                                 width='48px'
                                 height='48px'
                             />
-                            <Heading fontSize='20px' color='white'>GMAHK Advent Jambrut</Heading>
+                            <Heading fontSize='20px' color='white'>GMAHK Jemaat Jambrut</Heading>
                         </Flex>
                         <Text
                             fontSize='14px'
                             fontWeight='400'
                             color='white'
+                            id='location'
                         >
                             Jalan Jambrut 13, Kecamatan Senen, Jakarta Pusat 10330
+                            <ReactRouterLink
+                                to='https://maps.app.goo.gl/JHKjisXKXVMo9x5a7'
+                                target='_blank'
+                            >
+                                <Icon
+                                    marginLeft='0.5rem' 
+                                    as={FaMap}
+                                    cursor='pointer'
+                                />
+                            </ReactRouterLink>
                         </Text>
                     </Flex>
                     <Flex
@@ -101,13 +104,18 @@ function Footer() {
                         <Flex alignItems='center' gap='.5rem'>
                             {SOCIAL_MEDIAS?.map((socialMedia: any, index: number) => {
                                 return (
-                                    <Icon
-                                        key={index}
-                                        as={socialMedia?.icon}
-                                        fontSize='20px'
-                                        color='white'
-                                        cursor='pointer'
-                                    />
+                                    <ReactRouterLink 
+                                        key={index} 
+                                        to={socialMedia?.href} 
+                                        target='_blank'
+                                    >
+                                        <Icon
+                                            as={socialMedia?.icon}
+                                            fontSize='20px'
+                                            color='white'
+                                            cursor='pointer'
+                                        />
+                                    </ReactRouterLink>
                                 )
                             })}
                         </Flex>
