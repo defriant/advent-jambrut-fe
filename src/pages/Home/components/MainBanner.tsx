@@ -30,10 +30,10 @@ function MainBanner() {
                         gap='.5rem'
                     >
                         <Heading fontSize={{ base: '25px', sm: '40px' }} color='white'>
-                            GMAHK Jemaat Jambrut
+                            GMAHK  Jambrut
                         </Heading>
                         <Text color='white' fontSize={{ base: '12px', sm: '18px' }}>
-                            Didorong oleh kasih Yesus, kami menjadikan Alkitab sebagai otoritas tertinggi. Gereja Masehi Advent Hari Ketujuh Jambrut merupakan Gereja Advent yang berdiri pada tahun (---)
+                            Didorong oleh kasih Yesus, kami menjadikan Alkitab sebagai otoritas tertinggi. Gereja Masehi Advent Hari Ketujuh Jambrut merupakan Gereja Advent yang berdiri pada 22 Mei 1957.
                         </Text>
                         <Flex gap='0.5rem'>
                             <Button

@@ -47,7 +47,7 @@ function Footer() {
                                 width='48px'
                                 height='48px'
                             />
-                            <Heading fontSize='20px' color='white'>GMAHK Jemaat Jambrut</Heading>
+                            <Heading fontSize='20px' color='white'>GMAHK  Jambrut</Heading>
                         </Flex>
                         <Text
                             fontSize='14px'
